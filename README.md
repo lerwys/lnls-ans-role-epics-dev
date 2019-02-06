@@ -17,13 +17,13 @@ This Ansible role install EPICS packages.
 Available variables are listed below, along with default values (see defaults/main.yml):
 
 ```yaml
-    epics_base_default_version: "3.15.3"
+    epics_default_version: "3.15.3"
 ```
 
 EPICS base version
 
 ```yaml
-    epics_base_packages_state: present
+    epics_packages_state: present
 ```
 
 If you have enabled any additional repositories, you may want an easy way to
@@ -33,7 +33,7 @@ version.
 
 
 ```yaml
-    epics_base_install_recommends: true
+    epics_install_recommends: true
 ```
 
 (Debian/Ubuntu only) Whether to install recommended packages when
