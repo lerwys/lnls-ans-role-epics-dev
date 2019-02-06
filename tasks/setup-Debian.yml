@@ -1,0 +1,12 @@
+---
+- name: Update apt cache.
+  apt:
+    update_cache: true
+    cache_valid_time: 86400
+
+- name: Ensure EPICS packages are installed
+  apt:
+    name: "{{ epics_packages }}"
+    state: "{{ epics_packages_state }}"
+    install_recommends: "{{ epics_install_recommends }}"
+  register: epics_package_install
