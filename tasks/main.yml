@@ -10,6 +10,16 @@
       paths:
         - '{{ role_path }}/vars'
 
+- name: Define EPICS packages
+  set_fact:
+    epics_packages: "{{ __epics_packages | list }}"
+  when: epics_packages is not defined
+
+- name: Define EPICS extra packages
+  set_fact:
+    epics_packages: "{{ epics_packages | list + epics_packages_extra | list }}"
+  when: epics_packages_extra is defined
+
 # Setup/install tasks
 - include_tasks: setup-Debian.yml
   when:
