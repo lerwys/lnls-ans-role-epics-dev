@@ -33,7 +33,7 @@ version.
 
 
 ```yaml
-epics_base_install_recommends: true
+    epics_base_install_recommends: true
 ```
 
 (Debian/Ubuntu only) Whether to install recommended packages when
@@ -42,7 +42,7 @@ if you're installing a PPA that recommends certain packages you don't want.
 
 
 ```yaml
-epics_packages_extra: []
+    epics_packages_extra: []
 ```
 
 A list of extra EPICS packages to install without overriding the default list.
