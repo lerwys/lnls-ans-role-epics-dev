@@ -22,4 +22,5 @@
     name: "{{ epics_packages }}"
     state: "{{ epics_packages_state }}"
     install_recommends: "{{ epics_install_recommends }}"
+  become: true
   register: apt_packages_result
