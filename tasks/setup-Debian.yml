@@ -7,7 +7,7 @@
 
 - name: Ensure EPICS missing packages are installed
   apt:
-    name: "{{ item.url }}"
+    deb: "{{ item.url }}"
     state: "{{ item.state }}"
   become: true
   with_items:
