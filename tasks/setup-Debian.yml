@@ -24,3 +24,6 @@
     install_recommends: "{{ epics_install_recommends }}"
   become: true
   register: apt_packages_result
+  until: apt_packages_result is success
+  retries: 10
+  delay: 2
