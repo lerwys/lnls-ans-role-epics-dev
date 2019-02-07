@@ -5,6 +5,18 @@
     cache_valid_time: 86400
   become: true
 
+- name: Ensure EPICS missing packages are installed
+  apt:
+    name: "{{ item.url }}"
+    state: "{{ item.state }}"
+  become: true
+  with_items:
+    - "{{ epics_missing_packages }}"
+  register: apt_missing_packages_result
+  until: apt_missing_packages_result is success
+  retries: 10
+  delay: 2
+
 - name: Ensure EPICS packages are installed
   apt:
     name: "{{ epics_packages }}"
