@@ -4,6 +4,10 @@
     update_cache: true
     cache_valid_time: 86400
   become: true
+  register: apt_update_cache_result
+  until: apt_update_cache_result is success
+  retries: 10
+  delay: 2
 
 - name: Ensure EPICS missing packages are installed
   apt:
