@@ -17,4 +17,4 @@ galaxy_info:
         - trusty
 
 dependencies:
-  - lerwys.lnls_ans_role_repository
+  - lerwys.lnls-ans-role-repository
